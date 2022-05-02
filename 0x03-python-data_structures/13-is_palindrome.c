@@ -14,7 +14,9 @@ int is_palindrome(listint_t **head)
 	int i = 1, length = 0, half;
 	int *array;
 
-	if (head == NULL || *head == NULL)
+	if (head == NULL)
+		return (0);
+	if (*head == NULL)
 		return (1);
 	check = *head;
 
