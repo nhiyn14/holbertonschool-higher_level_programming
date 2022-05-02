@@ -38,9 +38,13 @@ int is_palindrome(listint_t **head)
 	while (i <= half)
 	{
 		if (array[i] != array[length - 1])
+		{
+			free(array);
 			return (0);
+		}
 		length--;
 		i++;
 	}
+	free(array);
 	return (1);
 }
