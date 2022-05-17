@@ -54,9 +54,14 @@ class Square:
         Args:
             value (int): Square position
         """
+        err = "position must be a tuple of 2 positive integers"
+        if len(value) != 2:
+            raise TypeError(err)
         if type(value) is not tuple:
+            raise TypeError(err)
+        else:
             if value[0] < 0 or value[1] < 0:
-                raise TypeError("position must be a tuple of 2 positive integers")
+                    raise TypeError(err)
 
         """Make value Private instance attribute size
 
@@ -84,6 +89,5 @@ class Square:
                 for col in range(self.size):
                     print("#", end="")
                 print()
-            print()
         else:
             print()
