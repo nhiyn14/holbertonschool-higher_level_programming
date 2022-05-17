@@ -9,6 +9,10 @@ class Square:
         __size (int): Square size
     """
     def __init__(self, size):
+        if type(size) is not int:
+            raise TypeError("size must be an integer")
+        if type(size) is int and size < 0:
+            raise ValueError("size must be >= 0")
         """Make size Private instance attribute
 
         Args:
@@ -17,7 +21,3 @@ class Square:
         Return: None
         """
         self.__size = size
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        if type(size) is int and size < 0:
-            raise ValueError("size must be >= 0")
