@@ -60,8 +60,10 @@ class Square:
         if type(value) is not tuple:
             raise TypeError(err)
         else:
-            if value[0] < 0 or value[1] < 0:
-                    raise TypeError(err)
+            if type(value[0]) is not int or value[0] < 0:
+                raise TypeError(err)
+            if type(value[1]) is not int or value[1] < 0:
+                raise TypeError(err)
 
         """Make value Private instance attribute size
 
