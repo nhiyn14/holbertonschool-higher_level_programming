@@ -1,0 +1,136 @@
+The ""2-matrix_divided" module
+======================
+
+Using ''matrix_divided''
+-------------------
+
+Import ''matrix_divided'' from ''2-matrix_divided'' module:
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Now use it:
+
+Check for a all positive int matrix / positive int div:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], 2)
+    [[1.0, 2.0, 3.0], [3.0, 2.0, 1.0]]
+
+Check for a all positive int matrix / negative int div:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], -2)
+    [[-1.0, -2.0, -3.0], [-3.0, -2.0, -1.0]]
+
+Check for a all negative int matrix / negative int div:
+    >>> matrix_divided([[-2, -4, -6], [-6, -4, -2]], -2)
+    [[1.0, 2.0, 3.0], [3.0, 2.0, 1.0]]
+
+Check for a all negative int matrix / positive int div:
+    >>> matrix_divided([[-2, -4, -6], [-6, -4, -2]], 2)
+    [[-1.0, -2.0, -3.0], [-3.0, -2.0, -1.0]]
+
+Check for a all positive int matrix / 0:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Check for a all positive int matrix / -0:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+Check for a all positive int matrix / string div:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], "<3")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Check for a all positive int matrix / char div:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], <3)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+Check for a string element in matrix / positive int div:
+    >>> matrix_divided([["nhi", -4, -6], [-6, -4, -2]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Check for a char element in matrix / positive int div:
+    >>> matrix_divided([[n, -4, -6], [-6, -4, -2]], 2)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'n' is not defined
+
+Check for a matrix of different size / positive int div:
+    >>> matrix_divided([[-2, -4, -6, -8], [-6, -4, -2]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+Check for a non-matrix list / positive int div:
+    >>> matrix_divided(((-2, -4, -6), (-6, -4, -2)), 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Check for an empty list / positive int div:
+    >>> matrix = []
+    >>> matrix_divided(matrix, 2)
+    []
+
+Check for missing div:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Check for missing matrix:
+    >>> matrix_divided(, 2)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+Check for passing wrong number of arguments:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], 2, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+Check for a all positive int matrix / Bool:
+    >>> matrix_divided([[2, 4, 6], [6, 4, 2]], True)
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+Check for a Bool element / positive int div:
+    >>> matrix_divided(True, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: 'bool' object is not iterable
+
+Check for passing Book in both arguments:
+    >>> matrix_divided(True, True)
+    Traceback (most recent call last):
+    ...
+    TypeError: 'bool' object is not iterable
+
+Check for a matrix with 1 Bool element / positive int div:
+    >>> matrix_divided([[2, 4, True], [6, 4, 2]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Checking for div == infinity:
+    >>> matrix_divided(matrix, float('inf'))
+    []
+
+Checking for matrix == infinity:
+    >>> matrix_divided(float('inf'), 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: 'float' object is not iterable
+
+Checking for an ele in matrix == infinity:
+    >>> matrix_divided([[2, 4, float('inf')], [6, 4, 2]], 2)
+    [[1.0, 2.0, inf], [3.0, 2.0, 1.0]]
