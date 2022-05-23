@@ -1,0 +1,71 @@
+The "3-say_my_name" module
+======================
+
+Using ''say_my_name''
+-------------------
+
+Import ''say_my_name'' from ''3-say_my_name'' module:
+
+    >>> matrix_divided = __import__("3-say_my_name").say_my_name
+
+Now use it:
+
+Check for normal full name:
+    >>> say_my_name("Howina", "Li")
+    >>> My name is Howina Li
+
+Check for str first_name and non-str second_name:
+    >>> say_my_name("Howina", 14)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+Check for non-str first_name and str second_name:
+    >>> say_my_name(14, "Li")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Check for non-str first_name and non-str second_name:
+    >>> say_my_name(14, 68)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Check for passing 1 str argument only:
+    >>> say_my_name("Howina")
+    My name is Howina
+
+Check for passing last_name only:
+    >>> say_my_name(, "Li")
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+Check for passing more than 2 str arguments:
+    >>> say_my_name("Howina", "Li", "Foo")
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+Check for passing nothing at argument:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Check for passing 2 empty str arguments:
+    >>> say_my_name("", "")
+    My name is
+
+Check for passing 1 empty str arguments:
+    >>> say_my_name("")
+    My name is
+
+Check for passing str first_name and empty str last_name:
+    >>> say_my_name("Cienna", "")
+    My name is Cienna
+
+Check for passing empty str first_name and str last_name:
+    >>> say_my_name("", "Cienna")
+    My name is  Cienna
