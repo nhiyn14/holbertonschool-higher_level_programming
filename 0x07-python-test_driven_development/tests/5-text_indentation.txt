@@ -1,0 +1,23 @@
+The "5-text_indentation" module
+======================
+
+Using ''text_indentation''
+-------------------
+
+Import ''text_indentation'' from ''5-text_indentation'' module:
+
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Now use it:
+
+Check for text == str with special characters:
+    >>> text_indentation("Hi, what's your name? My name is: Cienna. Nice to meet you")
+    Hi, what's your name?
+    <BLANKLINE>
+    My name is:
+    <BLANKLINE>
+    Cienna.
+    <BLANKLINE>
+    Nice to meet you
+
+
