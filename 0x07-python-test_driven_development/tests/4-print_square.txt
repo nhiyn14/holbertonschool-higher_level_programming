@@ -1,0 +1,62 @@
+The "4-print_square" module
+======================
+
+Using ''print_square''
+-------------------
+
+Import ''print_square'' from ''4-print_square'' module:
+
+    >>> print_square = __import__("4-print_square").print_square
+
+Now use it:
+
+Check for size == positive int:
+    >>> print_square(1)
+    #
+    >>> print_square(2)
+    ##
+    ##
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Check for size == 0:
+    >>> print_square(0)
+
+Check for size == negative int:
+    >>> print_square(-4)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Check for size == float:
+    >>> print_square(4.20)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Check for size == str:
+    >>> print_square("Hello, C#17")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Check for size == bool (True/Flase):
+    >>> print_square(True)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Check for not passing argument:
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+Check for passing > 1 argument:
+    >>> print_square(1, 4)
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() takes 1 positional argument but 2 were given
