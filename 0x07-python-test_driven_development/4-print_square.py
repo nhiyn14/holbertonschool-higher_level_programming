@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Module to print square of #
+"""
+
+
 def print_square(size):
     """a square with the character #
     Returns: square of #

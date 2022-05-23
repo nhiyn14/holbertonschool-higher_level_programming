@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""Module to return sum of 2 int
+"""
+
+
 def add_integer(a, b=98):
     """My addition function
     Returns: a + b
