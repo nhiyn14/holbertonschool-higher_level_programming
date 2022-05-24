@@ -75,10 +75,10 @@ Check for a is int/float and b is not int/float:
     TypeError: b must be an integer
 
 Check for both arguments are not int/float:
-    >>> add_integer(-14,"nhi")
+    >>> add_integer('howard',"nhi")
     Traceback (most recent call last):
     ...
-    TypeError: b must be an integer
+    TypeError: a must be an integer
 
 Check for no arguments passing:
     >>> add_integer()
@@ -95,6 +95,8 @@ Check for more than 2 arguments passing:
 Check for unnecessary empty before b:
     >>> add_integer(1,            13)
     14
+    >>> add_integer(        1   ,         13   )
+    14
 
 Check for space between argument a:
     >>> add_integer(1,1 3)
@@ -107,3 +109,13 @@ Check for a is pool and b is int/float:
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
+
+Check for infinity:
+    >>> add_integer(float('inf'), 2)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer

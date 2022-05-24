@@ -20,4 +20,79 @@ Check for text == str with special characters:
     <BLANKLINE>
     Nice to meet you
 
+Checking for text == 1 special char:
+    >>> text_indentation("?")
+    ?
+    <BLANKLINE>
 
+Checking for text == str
+    >>> text_indentation(141414)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Checking for text == float
+    >>> text_indentation(14.1414)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Checking for text == list
+    >>> text_indentation([14, 1414])
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Checking for text == tuple
+    >>> text_indentation((14,))
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Checking for many spaces:
+	 >>> text_indentation("   Hello, Cienna.  Still alive?   ")
+	 Hello, Cienna.
+	 <BLANKLINE>
+	 Still alive?
+	 <BLANKLINE>
+
+Checking for standalone special chars:
+	 >>> text_indentation(" . ? : ")
+	 .
+	 <BLANKLINE>
+	 ?
+	 <BLANKLINE>
+	 :
+	 <BLANKLINE>
+
+Checking for one word:
+	 >>> text_indentation("Howard")
+	 Howard
+
+Checking for newline at beginning:
+	 >>> text_indentation(" \n Bubby? <3.")
+	 <BLANKLINE>
+	  Bubby?
+	 <BLANKLINE>
+	 <3.
+	 <BLANKLINE>
+ 
+Checking for newline in middle:
+	 >>> text_indentation("Bello \n . Nhi hen ke ai")
+	 Bello 
+	  .
+	 <BLANKLINE>
+	 Nhi hen ke ai
+
+Checking for newline at end:
+	 >>> text_indentation("Who am I?\n")
+	 Who am I?
+	 <BLANKLINE>
+	 <BLANKLINE>
+
+Checking for newline at end and start:
+	 >>> text_indentation("\n Should I code or shower?\n")
+	 <BLANKLINE>
+          Should I code or shower?
+	 <BLANKLINE>
+	 <BLANKLINE>

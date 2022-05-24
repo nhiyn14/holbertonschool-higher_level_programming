@@ -36,15 +36,35 @@ Check for size == float:
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
+    >>> print_square(-14.20)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
 
 Check for size == str:
     >>> print_square("Hello, C#17")
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
+    >>> print_square('Hello, Lil lil')
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
 
 Check for size == bool (True/Flase):
     >>> print_square(True)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Check for size == infinity:
+    >>> print_square(float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Check for size == None:
+    >>> print_square(None)
     Traceback (most recent call last):
     ...
     TypeError: size must be an integer
