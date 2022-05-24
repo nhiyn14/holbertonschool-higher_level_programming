@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module to return sum of 2 int
+"""
+Module to return sum of 2 int
+
+Argument: a, b
 """
 
 

@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module to print square of #
+"""
+Module to print square of #
+
+Arguments: size
 """
 
 

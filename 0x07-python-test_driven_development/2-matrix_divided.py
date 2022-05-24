@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module to divide a given matrix
+"""
+Module to divide a given matrix
+
+Arugments: matrix, div
 """
 
 

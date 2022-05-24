@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module to add new line in text
+"""
+Module to add new line in text
+
+Argument: text
 """
 
 

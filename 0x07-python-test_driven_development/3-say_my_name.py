@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Module to print first and last name
+"""
+Module to print first and last name
+
+Arguments:first_name, last_name
 """
 
 
