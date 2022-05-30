@@ -1,0 +1,71 @@
+The ''7-base_geometry'' module
+======================
+
+Using ''BaseGeometry''
+-------------------
+
+Import ''BaseGeometry'' from ''7-base_geometry'' module:
+
+    >>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Now use it:
+
+Check for correct import:
+    >>> len(__import__("7-base_geometry").__doc__) > 0
+    True
+    >>> len(__import__("7-base_geometry").BaseGeometry.__doc__) > 0
+    True
+    >>> len(__import__("7-base_geometry").BaseGeometry.area.__doc__) > 0
+    True
+    >>> len(__import__("7-base_geometry").BaseGeometry.integer_validator.__doc__) > 0
+    True
+
+Check if area raise Exception:
+    >>> test = BaseGeometry()
+    >>> test.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+Check if value == positive int:
+    >>> test.integer_validator("nhi", 14)
+
+Check if value == negative int:
+    >>> test.integer_validator("nhi", -14)
+    Traceback (most recent call last):
+    ...
+    ValueError: nhi must be greater than 0
+
+Check if value != str int:
+    >>> test.integer_validator("nhi", "howina")
+    Traceback (most recent call last):
+    ...
+    TypeError: nhi must be an integer
+
+    >>> test.integer_validator("nhi", True)
+    Traceback (most recent call last):
+    ...
+    TypeError: nhi must be an integer
+
+
+Check if passing none argument:
+    >>> test.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Check if passin only 1 argument:
+    >>> test.integer_validator("nhi",)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    >>> test.integer_validator(, 14)
+    Traceback (most recent call last):
+    ...
+    SyntaxError: invalid syntax
+
+    >>> test.integer_validator(14)
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
