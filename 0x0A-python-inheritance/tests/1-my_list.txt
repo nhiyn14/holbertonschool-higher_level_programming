@@ -1,0 +1,61 @@
+The ''1-my_list'' module
+======================
+
+Using ''MyList''
+-------------------
+
+Import ''MyList'' from ''1-my_list'' module:
+
+    >>> MyList = __import__("1-my_list").MyList
+
+Now use it:
+
+Check if MyList inherits from list:
+    >>> issubclass(MyList, list)
+    True
+
+Check no argument passing into MyList:
+    >>> my_list = MyList()
+    >>> my_list
+    []
+    >>> my_list.print_sorted()
+    []
+
+Check argument passing into MyList:
+    >>> my_list = MyList(14)
+    >>> my_list
+    Traceback (most recent call last):
+    ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+Check for appending (ascending ele) into MyList:
+    >>> my_list.append(1)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(4)
+    >>> my_list
+    [1, 2, 3, 4]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4]
+
+Check for appending (non-ascending ele) into MyList:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(14)
+    >>> my_list.append(3)
+    >>> my_list.append(420)
+    >>> my_list
+    [1, 14, 3, 420]
+    >>> my_list.print_sorted()
+    [1, 3, 14, 420]
+
+Check for appending negative int into Mylist:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(-14)
+    >>> my_list.append(3)
+    >>> my_list.append(-420)
+    >>> my_list
+    [1, -14, 3, -420]
+    >>> my_list.print_sorted()
+    [-420, -14, 1, 3]
