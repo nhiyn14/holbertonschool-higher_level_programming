@@ -79,10 +79,7 @@ class Rectangle(Base):
 
     def display(self):
         """prints in stdout the Rectangle instance of #"""
-        if self.__y == 0:
-            pass
-        else:
-            print('\n' * self.__y, end="")
+        print('\n' * self.__y, end="")
         for i in range(self.__height):
             print(' ' * self.__x, end="")
             print('#' * self.__width)
@@ -91,3 +88,7 @@ class Rectangle(Base):
         """return [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
                 f" - {self.__width}/{self.__height}")
+
+    def update(self, *args):
+        """assigns an argument to each attribute"""
+
