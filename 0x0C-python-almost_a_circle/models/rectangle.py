@@ -5,6 +5,7 @@ Class Rectangle that inherits from Base
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """Class Rectangle that inherits from Base"""
 
@@ -80,3 +81,8 @@ class Rectangle(Base):
         """prints in stdout the Rectangle instance of #"""
         for i in range(self.__height):
             print('#' * self.__width)
+
+    def __str__(self):
+        """return [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}"
+                f" - {self.__width}/{self.__height}")
