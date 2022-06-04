@@ -3,8 +3,10 @@
 Class Square that inherits from Rectangle
 """
 
+
 from models.base import Base
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """Class Square that inherits from Rectangle"""
@@ -29,3 +31,25 @@ class Square(Rectangle):
         """return [Square] (<id>) <x>/<y> - <width>/<height>"""
         return (f"[Square] ({self.id}) {self.x}/{self.y}"
                 f" - {self.width}")
+
+    def update(self, *args, **kwargs):
+        """assigns a key/value argument to each attribute"""
+        if len(args) > 0:
+            for i, arg in enumerate(args):
+                if i == 0:
+                    self.id = arg
+                if i == 1:
+                    self.size = arg
+                if i == 2:
+                    self.x = arg
+                if i == 3:
+                    self.y = arg
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "size" in kwargs:
+                self.size = kwargs["size"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
