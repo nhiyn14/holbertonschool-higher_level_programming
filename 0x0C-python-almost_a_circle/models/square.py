@@ -30,7 +30,7 @@ class Square(Rectangle):
     def __str__(self):
         """return [Square] (<id>) <x>/<y> - <width>/<height>"""
         return (f"[Square] ({self.id}) {self.x}/{self.y}"
-                f" - {self.width}")
+                f" - {self.size}")
 
     def update(self, *args, **kwargs):
         """assigns a key/value argument to each attribute"""
