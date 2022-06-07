@@ -11,8 +11,8 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Init an instance"""
-        self.height = height
         self.width = width
+        self.height = height
         self.x = x
         self.y = y
         super().__init__(id)
@@ -119,8 +119,8 @@ class Rectangle(Base):
         """returns the dictionary representation of a Rectangle"""
         dictRec = {}
         dictRec["id"] = self.id
-        dictRec["width"] = self.__width
-        dictRec["height"] = self.__height
-        dictRec["x"] = self.__x
-        dictRec["y"] = self.__y
+        dictRec["width"] = self.width
+        dictRec["height"] = self.height
+        dictRec["x"] = self.x
+        dictRec["y"] = self.y
         return dictRec
